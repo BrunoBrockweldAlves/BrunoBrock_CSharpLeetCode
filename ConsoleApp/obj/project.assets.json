@@ -1,0 +1,92 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "Questions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Questions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Questions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Questions/1.0.0": {
+      "type": "project",
+      "path": "../Questions/Questions.csproj",
+      "msbuildProject": "../Questions/Questions.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "Questions >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\bruno\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Estudos\\Leetcode\\Dotnet Consoleapp\\ConsoleApp\\ConsoleApp.csproj",
+      "projectName": "ConsoleApp",
+      "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Estudos\\Leetcode\\Dotnet Consoleapp\\ConsoleApp\\ConsoleApp.csproj",
+      "packagesPath": "C:\\Users\\bruno\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Estudos\\Leetcode\\Dotnet Consoleapp\\ConsoleApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\bruno\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Estudos\\Leetcode\\Dotnet Consoleapp\\Questions\\Questions.csproj": {
+              "projectPath": "C:\\Users\\bruno\\OneDrive\\Área de Trabalho\\Estudos\\Leetcode\\Dotnet Consoleapp\\Questions\\Questions.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.200"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
