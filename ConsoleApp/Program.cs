@@ -1,5 +1,5 @@
-﻿
-using Questions;
+﻿using Questions;
+
 
 var input = 3;
 
