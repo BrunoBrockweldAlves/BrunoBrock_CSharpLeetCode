@@ -24,15 +24,20 @@ public static class _48RotateImage
         {
             for (int j = 0; j < steps; j++)
             {
-                var pivotA = matrix[j + diagonalFactor][maxIndex - diagonalFactor];
-                var pivotB = matrix[maxIndex - diagonalFactor][maxIndex - j - diagonalFactor];
-                var pivotC = matrix[maxIndex - j - diagonalFactor][0 + diagonalFactor];
-                var pivotD = matrix[0 + diagonalFactor][j + diagonalFactor];
+                var firstPoint = new Coordinate(j + diagonalFactor, maxIndex - diagonalFactor);
+                var seccondPoint = new Coordinate(maxIndex - diagonalFactor, maxIndex - j - diagonalFactor);
+                var thirdPoint = new Coordinate(maxIndex - j - diagonalFactor, 0 + diagonalFactor);
+                var fourthPoint = new Coordinate(0 + diagonalFactor, j + diagonalFactor);
 
-                matrix[j + diagonalFactor][maxIndex - diagonalFactor] = pivotD;
-                matrix[maxIndex - diagonalFactor][maxIndex - j - diagonalFactor] = pivotA;
-                matrix[maxIndex - j - diagonalFactor][0 + diagonalFactor] = pivotB;
-                matrix[0 + diagonalFactor][j + diagonalFactor] = pivotC;
+                var pivotA = matrix[firstPoint.Y][firstPoint.X];
+                var pivotB = matrix[seccondPoint.Y][seccondPoint.X];
+                var pivotC = matrix[thirdPoint.Y][thirdPoint.X];
+                var pivotD = matrix[fourthPoint.Y][fourthPoint.X];
+
+                matrix[firstPoint.Y][firstPoint.X] = pivotD;
+                matrix[seccondPoint.Y][seccondPoint.X] = pivotA;
+                matrix[thirdPoint.Y][thirdPoint.X] = pivotB;
+                matrix[fourthPoint.Y][fourthPoint.X] = pivotC;
             }
             steps -= 2;
         }
@@ -40,4 +45,16 @@ public static class _48RotateImage
         matrix.ConsoleLog();
         return matrix;
     }
+}
+
+public class Coordinate
+{
+    public Coordinate(int y, int x)
+    {
+        Y = y;
+        X = x;
+    }
+
+    public int X { get; set; }
+    public int Y { get; set; }
 }
