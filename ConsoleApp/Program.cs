@@ -1,10 +1,9 @@
 ﻿using Questions;
+using Helpers.Matrix;
 
 
 var input = 3;
 
 var result = _59SpiralMatrix.GenerateMatrix(input);
-string stringResult = string.Join("\n", result
-            .Select(row => "[" + string.Join(", ", row) + "]"));
 
-Console.WriteLine($"Result: {stringResult}");
+result.ConsoleLog();
