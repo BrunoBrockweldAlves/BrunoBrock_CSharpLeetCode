@@ -10,4 +10,8 @@
     <Folder Include="1To100\1to10\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Helpers\Helpers.csproj" />
+  </ItemGroup>
+
 </Project>
