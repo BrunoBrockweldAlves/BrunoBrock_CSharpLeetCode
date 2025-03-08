@@ -1,5 +1,5 @@
-﻿using Questions;
-using Helpers.Matrix;
+﻿using Helpers.Matrix;
+using Questions._1To100._51to60;
 
 
 var input = 3;

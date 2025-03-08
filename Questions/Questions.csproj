@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="1To100\1to10\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,4 @@
-namespace Questions;
+namespace Questions._1To100._51to60;
 
 public static class _59SpiralMatrix
 {
