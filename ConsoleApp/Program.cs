@@ -1,8 +1,6 @@
 ﻿
 using Questions;
 
-Console.WriteLine("Hello, World!");
-
 var input = 3;
 
 var result = _59SpiralMatrix.GenerateMatrix(input);

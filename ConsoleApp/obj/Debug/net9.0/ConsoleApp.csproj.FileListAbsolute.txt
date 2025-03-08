@@ -16,3 +16,4 @@ C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\Con
 C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\ConsoleApp\bin\Debug\net9.0\Questions.pdb
 C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\ConsoleApp\obj\Debug\net9.0\ConsoleApp.csproj.AssemblyReference.cache
 C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\ConsoleApp\obj\Debug\net9.0\ConsoleApp.csproj.Up2Date
+C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\ConsoleApp\obj\Debug\net9.0\ConsoleApp.sourcelink.json

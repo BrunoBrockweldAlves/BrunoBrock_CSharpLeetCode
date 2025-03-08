@@ -9,3 +9,4 @@ C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\Que
 C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\Questions\obj\Debug\net9.0\refint\Questions.dll
 C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\Questions\obj\Debug\net9.0\Questions.pdb
 C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\Questions\obj\Debug\net9.0\ref\Questions.dll
+C:\Users\bruno\OneDrive\Área de Trabalho\Estudos\Leetcode\Dotnet Consoleapp\Questions\obj\Debug\net9.0\Questions.sourcelink.json
