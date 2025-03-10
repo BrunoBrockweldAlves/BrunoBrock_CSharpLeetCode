@@ -1,6 +1,3 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Xunit;
-
 namespace Questions._401To500._491To500;
 
 /// <summary>
@@ -24,58 +21,41 @@ public static class _498DiagonalTraverse
     public static int[] FindDiagonalOrder(int[][] mat)
     {
         var result = new List<int>();
+        var cycles = mat.Length * 2 - 1;
+        var down = false;
+        var maxIndex = mat.Length - 1;
+        var minIndex = -maxIndex;
+        var minLoop = 0;
         var xAxis = 0;
         var yAxis = 0;
-        var up = true;
 
-        for (var i = 0; i < mat.Length; i++)
+        for (int i = 0; i < cycles; i++)
         {
-            if (up)
+            if (down)
             {
-                for (; xAxis <= i; xAxis++, yAxis++)
+                yAxis = minIndex > 0? minIndex : 0;
+                xAxis = xAxis > maxIndex? maxIndex : xAxis;
+                for (; xAxis >= minLoop && xAxis >= minIndex; yAxis++, xAxis--)
                 {
-                    result.Add(mat[yAxis][yAxis]);
-                }
-                for (; yAxis > i; yAxis++, xAxis++, yAxis--)
-                {
-                    result.Add(mat[yAxis - 1][xAxis]);
+                    result.Add(mat[yAxis][xAxis]);
                 }
             }
             else
             {
-                for (; xAxis > 0; xAxis--, yAxis++)
+                xAxis = minIndex > 0? minIndex : 0;
+                yAxis = yAxis > maxIndex ? maxIndex : yAxis;
+
+                for (; yAxis >= minLoop && yAxis >= minIndex; yAxis--, xAxis++)
                 {
-                    result.Add(mat[yAxis][yAxis]);
+                    result.Add(mat[yAxis][xAxis]);
                 }
+
             }
-            up = !up;
+            down = !down;
+            minIndex++;
+            minLoop = minIndex > 0? minIndex : 0;
         }
 
-        return result.ToArray();
+        return [.. result];
     }
 }
-    [TestClass]
-    public class Test
-    {
-        public static IEnumerable<object[]> TestData()
-        {
-            yield return new object[]
-            {
-            new int[][] { [1,2,3], [4,5,6], [7,8,9] },
-            new int[] {1,2,4,7,5,3,6,8,9}
-            };
-            yield return new object[]
-            {
-            new int[][] { [1,2], [3,4] },
-            new int[] {1,2,3,4}
-            };
-        }
-
-        [Theory]
-        [MemberData(nameof(TestData))]
-        public static void ExpectSuccess(int[][] input, int[] output)
-        {
-            var result = _498DiagonalTraverse.FindDiagonalOrder(input);
-            Xunit.Assert.Equal(output, result);
-        }
-    }
