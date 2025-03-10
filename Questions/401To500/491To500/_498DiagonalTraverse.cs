@@ -2,12 +2,6 @@ namespace Questions._401To500._491To500;
 
 /// <summary>
 /// Given an m x n matrix mat, return an array of all the elements of the array in a diagonal order.
-// Example 1:
-// Input: mat = [[1,2,3],[4,5,6],[7,8,9]]
-// Output: [1,2,4,7,5,3,6,8,9]
-// Example 2:
-// Input: mat = [[1,2],[3,4]]
-// Output: [1,2,3,4]
 // Constraints:
 // m == mat.length
 // n == mat[i].length
@@ -15,45 +9,38 @@ namespace Questions._401To500._491To500;
 // 1 <= m * n <= 104
 // -105 <= mat[i][j] <= 105
 /// </summary>
-/// 
 public static class _498DiagonalTraverse
 {
     public static int[] FindDiagonalOrder(int[][] mat)
     {
-        var result = new List<int>();
-        var cycles = mat.Length * 2 - 1;
-        var down = false;
-        var maxIndex = mat.Length - 1;
-        var minIndex = -maxIndex;
-        var minLoop = 0;
-        var xAxis = 0;
-        var yAxis = 0;
+        if (mat is null || mat.Length == 0 || mat[0].Length == 0)
+            return [];
 
-        for (int i = 0; i < cycles; i++)
+        var maxRowIndex = mat.Length - 1;
+        var maxColumnIndex = mat[0].Length - 1;
+        var totalCycles = maxRowIndex + maxColumnIndex;
+        var up = true;
+
+        int[] result = new int[mat.Length * mat[0].Length];
+        var index = 0;
+
+        for (int cycle = 0; cycle <= totalCycles; cycle++)
         {
-            if (down)
+            if (up)
             {
-                yAxis = minIndex > 0? minIndex : 0;
-                xAxis = xAxis > maxIndex? maxIndex : xAxis;
-                for (; xAxis >= minLoop && xAxis >= minIndex; yAxis++, xAxis--)
+                for (int row = Math.Min(cycle, maxRowIndex), col = cycle - row; row >= 0 && col <= maxColumnIndex; row--, col = cycle - row)
                 {
-                    result.Add(mat[yAxis][xAxis]);
+                    result[index++] = mat[row][col];
                 }
             }
             else
             {
-                xAxis = minIndex > 0? minIndex : 0;
-                yAxis = yAxis > maxIndex ? maxIndex : yAxis;
-
-                for (; yAxis >= minLoop && yAxis >= minIndex; yAxis--, xAxis++)
+                for (int col = Math.Min(cycle, maxColumnIndex), row = cycle - col; col >= 0 && row <= maxRowIndex; col--, row = cycle - col)
                 {
-                    result.Add(mat[yAxis][xAxis]);
+                    result[index++] = mat[row][col];
                 }
-
             }
-            down = !down;
-            minIndex++;
-            minLoop = minIndex > 0? minIndex : 0;
+            up = !up;
         }
 
         return [.. result];
