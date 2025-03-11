@@ -1,4 +1,4 @@
-using Helpers.Matrix;
+using Helpers.Matrixes;
 
 namespace Questions._1To100._41to50;
 

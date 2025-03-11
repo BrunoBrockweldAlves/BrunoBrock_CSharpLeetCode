@@ -1,4 +1,4 @@
-namespace Helpers.Matrix;
+namespace Helpers.Matrixes;
 
 public static class PrintMatrix
 {
