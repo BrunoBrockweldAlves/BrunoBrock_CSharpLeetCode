@@ -1,18 +1,7 @@
-﻿namespace Questions._601To700._691To700
-{
-    public class TreeNode
-    {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
-        {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
+﻿using BaseClasses.BinaryTrees;
 
+namespace Questions._601To700._691To700
+{
     public class _700SearchInABinarySearchTree
     {
         public TreeNode? SearchBST(TreeNode? root, int val)
