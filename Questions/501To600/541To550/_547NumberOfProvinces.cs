@@ -78,7 +78,7 @@
 			return provinces;
 		}
 
-		public void dfs(int city, int[][] isConnected, bool[] visited)
+		public static void dfs(int city, int[][] isConnected, bool[] visited)
 		{
 			for (var i = 0; i < isConnected.Length; i++)
 			{
