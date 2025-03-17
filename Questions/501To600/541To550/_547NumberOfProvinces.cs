@@ -35,25 +35,29 @@
 					var groups = provinces.Where(p => p.Intersect([i, j]).Any());
 					if (!groups.Any())
 					{
-						provinces.Add([i, j]);
+						if (i == j)
+						{
+							provinces.Add([j]);
+						}
+						else
+							provinces.Add([i, j]);
 						continue;
 					}
 					var group = groups.First();
-					var newGroup = group.Append(j).ToArray();
+					var newGroup = group.Union([j]).ToArray();
 					if (groups.Count() > 1)
 					{
 						var seccondGroup = groups.Skip(1).First();
-						var temp = group.Union(seccondGroup).ToArray();
+						var temp = newGroup.Union(seccondGroup).ToArray();
 						var firstGroupIndex = provinces.Remove(group);
 						var seccondGroupIndex = provinces.Remove(seccondGroup);
-						group = temp;
+						newGroup = temp;
 					}
 
 					provinces.Remove(group);
 					provinces.Add(newGroup);
 				}
 			}
-
 			return provinces.Count;
 		}
 	}
