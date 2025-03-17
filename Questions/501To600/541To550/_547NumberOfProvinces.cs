@@ -20,7 +20,7 @@
 		// For each city, if it is connected to any other city, it's N-1 province
 		// We don't need to iterate on a city
 		// I don't to iterate matrix[j][i] or matrix[i][i]
-		public static int FindCircleNum(int[][] inputData)
+		public static int FindCircleNum_Mine(int[][] inputData)
 		{
 			var provinces = new List<int[]>();
 
@@ -59,6 +59,35 @@
 				}
 			}
 			return provinces.Count;
+		}
+
+		public static int FindCircleNum_Optimized(int[][] isConnected)
+		{
+			var n = isConnected.Length;
+			var provinces = 0;
+			var visited = new bool[n];
+			for (var i = 0; i < n; i++)
+			{
+				if (!visited[i])
+				{
+					provinces++;
+					visited[i] = true;
+					dfs(i, isConnected, visited);
+				}
+			}
+			return provinces;
+		}
+
+		public void dfs(int city, int[][] isConnected, bool[] visited)
+		{
+			for (var i = 0; i < isConnected.Length; i++)
+			{
+				if (isConnected[city][i] == 1 && !visited[i])
+				{
+					visited[i] = true;
+					dfs(i, isConnected, visited);
+				}
+			}
 		}
 	}
 }
