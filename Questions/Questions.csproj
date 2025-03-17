@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="501To600\541To550\_547NumberOfProvinces.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BaseClasses\BaseClasses.csproj" />
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
   </ItemGroup>
